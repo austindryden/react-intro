@@ -11,10 +11,11 @@
 // // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
 
-console.log("Hello?!? do this do thing?");
-console.log("live reload?");
+// console.log("Hello?!? do this do thing?");
+// console.log("live reload?");
 
 // #1 Accept args instead of using global variables.
+
 
 function greet ({name, address, occupation}){
     // const {name} = whom;   
@@ -42,9 +43,33 @@ function fromEarth(somebody){
     // if(!newSomebody.address){
     //     newSomebody.address = "earth";
     // }
-    console.log(newSomebody);
+    // console.log(newSomebody);
     return newSomebody;
 }
 
-console.log(greet(fromEarth(person)));
-console.log(greet(person));
+// console.log(greet(fromEarth(person)));
+// console.log(greet(person));
+
+function addressIsNotPacific(person){
+    return (person.address.toLowerCase() !== 'pacific');
+}
+
+const persons = [
+        {name:'Bob', address:'Atlanta'},
+        {name:'Alice', address : 'Atlanta'},
+        {name:'Cthulu', address : 'Pacific'}
+    ]
+
+// const modifiedPersons = [
+//     'Daria',
+//     ...persons
+    
+// ];
+
+const noPacifics = persons.filter(addressIsNotPacific);
+const noPacificsArrows = persons.filter(person => person.address.toLowerCase() !== 'pacific');
+// let modifiedPersons = ['Daria'];
+// modifiedPersons.push(...persons);
+console.log(noPacificsArrows);
+console.log(persons.map(greet));
+// console.log(modifiedPersons);
