@@ -1,12 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// // If you want your app to work offline and load faster, you can change
+// // unregister() to register() below. Note this comes with some pitfalls.
+// // Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.unregister();
+
+console.log("Hello?!? do this do thing?");
+console.log("live reload?");
+
+// #1 Accept args instead of using global variables.
+
+function greet ({name, address, occupation}){
+    // const {name} = whom;   
+    
+    // #2 ALWAYS return a value
+    return `hello, ${occupation} ${name}, welcome to ${address} !!`;
+}
+
+const person = {
+    name: 'Greta',
+    // address: 'Europe?',
+    occupation:"Cimate change goddess"
+};
+
+function fromEarth(somebody){
+    //add an address property
+    // debugger;
+    somebody.address = 'earth';
+    return somebody;
+}
+
+console.log(greet(fromEarth(person)));
+console.log(greet(person));
