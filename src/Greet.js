@@ -1,11 +1,15 @@
 // #1 import react
 import React from "react";
+import Card from "./card";
 
 
 
 function Greet({whom}){
+    const greetingText = `Hello, ${whom}`;
     return (
-        <p>Hello, {whom}</p>
+        <div>
+            <Card text={greetingText} />
+        </div>
     );
 }
 
