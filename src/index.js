@@ -32,8 +32,18 @@ const person = {
 function fromEarth(somebody){
     //add an address property
     // debugger;
-    somebody.address = 'earth';
-    return somebody;
+    const newSomebody = {
+        //defaults first, before the spread operator
+        address : "Earth",
+        ...somebody,
+        age : "all of them"
+        //hard overwrites go after the spread operator
+    }
+    // if(!newSomebody.address){
+    //     newSomebody.address = "earth";
+    // }
+    console.log(newSomebody);
+    return newSomebody;
 }
 
 console.log(greet(fromEarth(person)));
